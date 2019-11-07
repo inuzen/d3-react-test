@@ -9,12 +9,11 @@ export default (state, action) =>{
     return {
       ...state,
       data: [...state.data, action.payload],
-      loading: false
     }
     case 'DELETE_ITEM':
     return {
       ...state,
-      contacts: state.contacts.filter(item=> item.id !== action.payload),
+      data: state.data.filter(item=> item.id !== action.payload),
     }
     default:
     return state;
