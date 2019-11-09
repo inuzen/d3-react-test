@@ -1,17 +1,23 @@
 /*Common styles*/
-
 body {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
 
-.text{
+input {
+  outline: none;
+  border: 1px #1E88E5 solid;
+}
+
+.text {
   color: black;
   font-size: 1rem;
 }
-.text-h3{
+
+.text-h3 {
   font-size: 1.2rem;
 }
+
 .text-500 {
   font-weight: 500;
 }
@@ -19,11 +25,12 @@ body {
 .text-700 {
   font-weight: 700;
 }
+
 .text-800 {
   font-weight: 800;
 }
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
 }
@@ -34,87 +41,136 @@ body {
 }
 
 .button {
-
+  border: 0;
+  border-radius: 0.25rem;
+  background: #1E88E5;
+  color: white;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  cursor: pointer;
 }
 
-.button-remove{
+.button-remove {
   color: #fff;
   background-color: red;
 }
 
 /*Graph-Controls styles*/
-.controls-container{
-  max-width: 250px;
+.controls-container {
+  flex-basis: 25%;
+  max-width: 400px;
   border: 1px black solid;
+  overflow-y: auto;
 }
 
 .controls-wrapper {
   padding: 5px;
 }
 
-.number-input-container{
+.number-input-container {
   margin-bottom: 10px;
 }
 
-.data-list-container{
+.controls-input {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.data-list-container {
   align-items: center;
   justify-content: flex-start;
 }
 
-
 /*Data Item styles*/
-.item-container{
+.item-container {
   width: 100%;
   padding: 5px;
   border: 1px black solid;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
 
+.graph-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
 /*Graph Styles*/
-.graph-container{
+.graph-container {
+  padding: 15px;
   width: 100%;
   margin-right: 20px;
+  border: 1px black solid;
+}
+
+.graph-wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 /*App styles*/
-.app-wrapper{
-  margin-left: 20%;
-  margin-right: 20%;
-  justify-content: space-between;
-  border: 1px black solid;
+.app-wrapper {
+  min-width: 500px;
+  height: 100%;
+  padding: 10px;
   position: relative;
   transition: margin-left 0.5s, margin-right 0.5s;
 }
 
-.app-container{
+.app-container {
   width: 100%;
   height: 100vh;
   padding: 0 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
-.expand{
+.content-wrapper {
+  height: 100%;
+}
+
+.expand {
   position: absolute;
   width: 25px;
   height: 50px;
-  background-color: red;
+  background-color: #1E88E5;
   cursor: pointer;
   clip-path: polygon(100% 100%, 0 50%, 100% 0);
   transition: clip-path 0.3s;
 }
 
-.position-left{
-  left: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.position-right{
-  left: 100%;
+.position-left {
+  left: -5px;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.expand-left{
+.position-right {
+  left: calc(100% + 5px);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.expand-right{
-  clip-path: polygon( 0 0, 0 100%, 100% 50%);
+
+.expand-left {}
+
+.expand-right {
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+/*Panels*/
+.panel {
+  height: 100%;
+  display: inline-block;
+  width: 20%;
+  transition: width .3s;
+  overflow: hidden;
+  text-align: center;
 }

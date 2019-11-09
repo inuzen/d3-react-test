@@ -3,9 +3,8 @@ import GlobalContext from './globalContext';
 import globalReducer from './globalReducer';
 
 
-
 const GlobalState = (props) => {
-  const initialState = {data: null};
+  const initialState = {data: []};
 
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
@@ -26,6 +25,7 @@ const GlobalState = (props) => {
   const deleteDataPoint = (id) => {
     dispatch({type: 'DELETE_ITEM', payload: id});
   }
+
 
   return (<GlobalContext.Provider value={{
     data: state.data,
