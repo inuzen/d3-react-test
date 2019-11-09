@@ -63,7 +63,7 @@ input {
 /*Graph-Controls styles*/
 .controls-container {
   flex-basis: 25%;
-  max-width: 400px;
+  max-width: 275px;
   border: 1px black solid;
   overflow-y: auto;
 }
